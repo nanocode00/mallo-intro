@@ -6,9 +6,9 @@
   <title>말로(Mallo) — 말로 주문하는 카페 키오스크</title>
   <meta name="description" content="시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자를 위한 Voice-first 대화형 카페 주문 시스템. AI Human 7기 D조 프로젝트." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="./intro.css" />
+  <link rel="stylesheet" href="./styles/intro.css" />
 </head>
-<body>
+<body class="evaluator-page">
   <header class="intro-header">
     <div class="container header-inner">
       <a class="brand" href="#hero">
@@ -48,6 +48,10 @@
           <a class="btn btn-primary" href="#demo-video">데모 영상 보기</a>
           <a class="btn btn-ghost" href="#metrics">검증 지표 보기</a>
         </div>
+        <div class="media-slot hero-media" role="group" aria-label="말로 대표 UI 이미지">
+          <img src="./assets/images/kiosk-main.webp" alt="말로 키오스크 대표 화면" onerror="this.hidden=true" />
+          <div class="media-placeholder" role="img" aria-label="최종 UI 캡처 추가 예정"><p class="placeholder-title">MALLO KIOSK</p><p class="placeholder-sub">최종 UI 캡처 추가 예정</p></div>
+        </div>
       </div>
     </section>
 
@@ -57,12 +61,13 @@
         <p class="section-desc">
           대기 화면의 `주문하기` 한 번으로 시작되는 실제 주문 흐름을 담은 데모 영상입니다.
         </p>
-        <!-- TODO: 데모 영상 확보 후 아래 placeholder 전체를 다음 형식으로 교체하세요.
-             <video controls preload="metadata" src="./assets/demo.mp4"></video> -->
-        <div class="media-placeholder video-placeholder" role="img" aria-label="데모 영상 준비 중 자리표시자">
+        <div class="media-slot video-slot" role="group" aria-label="말로 데모 영상">
+          <video controls preload="metadata" src="./assets/videos/mallo-demo.mp4" onerror="this.hidden=true"></video>
+          <div class="media-placeholder video-placeholder" role="img" aria-label="데모 영상 추가 예정 자리표시자">
           <span class="placeholder-icon" aria-hidden="true">&#9654;</span>
           <p class="placeholder-title">DEMO VIDEO</p>
-          <p class="placeholder-sub">데모 영상 준비 중</p>
+          <p class="placeholder-sub">데모 영상 추가 예정</p>
+          </div>
         </div>
       </div>
     </section>
@@ -139,31 +144,27 @@
         <p class="section-desc">큰 글씨와 최소한의 조작으로 구성된 Minimal GUI입니다.</p>
         <div class="screen-grid">
           <figure class="screen-card">
-            <div class="media-placeholder screen-placeholder" role="img" aria-label="대기 화면 스크린샷 준비 중">
+            <div class="media-slot"><img src="./assets/images/kiosk-main.webp" alt="말로 대기 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="최종 UI 캡처 추가 예정">
               <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">UI 화면 준비 중</p>
-            </div>
+              <p class="placeholder-sub">최종 UI 캡처 추가 예정</p></div></div>
             <figcaption>대기 화면 — 주문하기</figcaption>
           </figure>
           <figure class="screen-card">
-            <div class="media-placeholder screen-placeholder" role="img" aria-label="음성 주문 화면 스크린샷 준비 중">
+            <div class="media-slot"><img src="./assets/images/voice-overlay.webp" alt="말로 음성 입력 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="음성 입력 화면 캡처 추가 예정">
               <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">UI 화면 준비 중</p>
-            </div>
+              <p class="placeholder-sub">음성 입력 화면 캡처 추가 예정</p></div></div>
             <figcaption>음성 주문 — 듣는 중 표시</figcaption>
           </figure>
           <figure class="screen-card">
-            <div class="media-placeholder screen-placeholder" role="img" aria-label="Adaptive TTS 확인 화면 스크린샷 준비 중">
+            <div class="media-slot"><img src="./assets/images/order-flow.webp" alt="말로 주문 확인 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="주문 흐름 캡처 추가 예정">
               <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">UI 화면 준비 중</p>
-            </div>
+              <p class="placeholder-sub">주문 흐름 캡처 추가 예정</p></div></div>
             <figcaption>Adaptive TTS 확인</figcaption>
           </figure>
           <figure class="screen-card">
-            <div class="media-placeholder screen-placeholder" role="img" aria-label="결제 완료 화면 스크린샷 준비 중">
+            <div class="media-slot"><img src="./assets/images/order-flow.webp" alt="말로 주문 및 결제 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="주문 및 결제 흐름 캡처 추가 예정">
               <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">UI 화면 준비 중</p>
-            </div>
+              <p class="placeholder-sub">주문 및 결제 흐름 캡처 추가 예정</p></div></div>
             <figcaption>주문 확인·결제 완료</figcaption>
           </figure>
         </div>
@@ -185,6 +186,7 @@
           <li class="arch-step arch-accent"><span class="arch-role">Adaptive TTS</span><span class="arch-detail">MeloTTS 친절체 · Level 0–2</span></li>
           <li class="arch-step"><span class="arch-role">응답</span><span class="arch-detail">음성 안내 + 큰 글씨 화면</span></li>
         </ol>
+        <div class="media-slot architecture-media"><img src="./assets/images/architecture.webp" alt="말로 시스템 구조도" onerror="this.hidden=true" /><div class="media-placeholder" role="img" aria-label="시스템 구조도 추가 예정"><p class="placeholder-title">ARCHITECTURE</p><p class="placeholder-sub">시스템 구조도 추가 예정</p></div></div>
       </div>
     </section>
 

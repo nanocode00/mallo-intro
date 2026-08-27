@@ -255,6 +255,15 @@ h2 {
   aspect-ratio: 16 / 10;
 }
 
+.media-slot { position: relative; overflow: hidden; border-radius: var(--radius-md); }
+.media-slot > img,
+.media-slot > video { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.media-slot > img:not([hidden]) + .media-placeholder,
+.media-slot > video:not([hidden]) + .media-placeholder { display: none; }
+.hero-media { max-width: 720px; margin: 2rem auto 0; }
+.architecture-media { max-width: 720px; margin: 2rem auto 0; }
+.video-slot { max-width: 960px; }
+
 .placeholder-icon {
   font-size: 1.5rem;
   color: var(--green);
@@ -651,4 +660,56 @@ h2 {
   .btn-primary:hover {
     transform: none;
   }
+}
+
+/* Customer page and directory entry: shared tokens above, audience-specific layout below. */
+.customer-page .section-warm { background: var(--cream-warm); }
+.customer-page .site-header { position: sticky; top: 0; z-index: 10; background: rgba(30,57,50,.97); backdrop-filter: blur(6px); }
+.customer-page .section-lead { font-size: 1.1rem; color: var(--ink-muted); margin-bottom: 2rem; }
+.customer-page .hero { padding: 7rem 0 8rem; text-align: center; color: var(--white); background: linear-gradient(150deg, var(--green-dark), #10261f); }
+.customer-page .hero-bg { position: absolute; inset: 0; background: radial-gradient(circle at 70% 30%, rgba(203,162,88,.15), transparent 60%); }
+.customer-page .hero-inner { position: relative; z-index: 1; }
+.customer-page .hero-tag { display: inline-block; border: 1px solid rgba(255,255,255,.3); border-radius: 999px; padding: .2rem .8rem; color: var(--gold); margin-bottom: 1.6rem; }
+.customer-page .hero h1 { font-size: clamp(3rem, 8vw, 5rem); line-height: 1.2; margin-bottom: 1.2rem; }
+.customer-page .hero-lead { font-size: 1.5rem; margin-bottom: 2.4rem; color: rgba(255,255,255,.88); }
+.customer-page .hero-lead strong { color: var(--gold); }
+.customer-page .btn-lg { padding: 1rem 2.4rem; font-size: 1.15rem; }
+.customer-page .stat-row, .customer-page .solution-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 2rem; }
+.customer-page .stat-card, .customer-page .solution-card, .customer-page .feature-card, .customer-page .member-card { background: var(--white); border-radius: var(--radius-md); padding: 1.6rem 1.4rem; box-shadow: var(--shadow-card); }
+.customer-page .stat-card { text-align: center; }
+.customer-page .stat-highlight { border-top: 5px solid var(--green); }
+.customer-page .stat-number { font-size: 2.4rem; font-weight: 800; color: var(--green-dark); }
+.customer-page .stat-desc, .customer-page .solution-card p, .customer-page .feature-card p, .customer-page .step-body p { color: var(--ink-muted); }
+.customer-page .solution-card { text-align: center; }
+.customer-page .solution-icon { font-size: 2.4rem; margin-bottom: .8rem; }
+.customer-page .solution-card h3, .customer-page .step-body h3, .customer-page .feature-card h3 { color: var(--green-dark); margin-bottom: .6rem; }
+.customer-page .step-list { list-style: none; max-width: 640px; }
+.customer-page .step-item { display: flex; gap: 1.2rem; padding: 1.6rem 0; border-bottom: 1px solid #e8e2d8; }
+.customer-page .step-item:last-child { border-bottom: 0; }
+.customer-page .step-num { flex: 0 0 48px; width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; background: var(--green); color: var(--white); font-weight: 800; font-size: 1.3rem; }
+.customer-page .feature-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem; margin-top: 2rem; }
+.customer-page .screen-flow { display: flex; align-items: center; gap: .8rem; margin-top: 2rem; overflow-x: auto; padding-bottom: 1rem; }
+.customer-page .screen-item { flex: 0 0 auto; text-align: center; }
+.customer-page .screen-placeholder { width: 200px; height: 130px; border: 2px dashed rgba(30,57,50,.3); border-radius: var(--radius-md); background: var(--cream); display: grid; place-content: center; gap: .3rem; }
+.customer-page .placeholder-text { font-weight: 700; color: var(--green-dark); }
+.customer-page .screen-item figcaption { max-width: 200px; margin-top: .6rem; color: var(--green-dark); font-size: .82rem; font-weight: 600; }
+.customer-page .flow-arrow { flex: 0 0 auto; font-size: 1.6rem; color: var(--green); }
+.customer-page .team-row { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1.5rem; }
+.customer-page .member-card { min-width: 160px; text-align: center; }
+.customer-page .member-avatar { width: 56px; height: 56px; margin: 0 auto .7rem; display: grid; place-items: center; border-radius: 50%; background: var(--green); color: var(--white); font-weight: 800; }
+.customer-page .member-card h3 { color: var(--green-dark); }
+.customer-page .member-role { color: var(--ink-muted); font-size: .82rem; }
+.customer-page .site-footer { background: var(--green-dark); color: rgba(255,255,255,.85); padding: 2.4rem 0; text-align: center; }
+.customer-page .footer-brand { color: var(--white); font-weight: 700; }
+.intro-index { min-height: 100vh; background: var(--cream); display: grid; place-items: center; }
+.intro-entry { max-width: 900px; padding: 3rem 0; text-align: center; }
+.intro-entry h1 { color: var(--green-dark); font-size: clamp(3rem, 8vw, 5rem); }
+.entry-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 2rem; text-align: left; }
+.entry-card { display: block; padding: 2rem; border-radius: var(--radius-md); background: var(--white); color: var(--ink); text-decoration: none; box-shadow: var(--shadow-card); }
+.entry-card h2 { font-size: 1.4rem; }
+.entry-card:hover { outline: 3px solid var(--green-soft); }
+@media (max-width: 768px) {
+  .customer-page .stat-row, .customer-page .solution-grid, .customer-page .feature-grid, .entry-grid { grid-template-columns: 1fr; }
+  .customer-page .team-row { flex-direction: column; align-items: center; }
+  .customer-page .hero { padding: 5rem 0 6rem; }
 }
