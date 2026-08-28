@@ -11,7 +11,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-touch-icon.png">
   <meta name="theme-color" content="#1e3932">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="./styles/intro.css?v=20260828v4" />
+  <link rel="stylesheet" href="./styles/intro.css?v=20260828v5" />
 </head>
 <body class="evaluator-page">
   <!-- Header -->
@@ -31,6 +31,7 @@
         <a href="#solution">해결 방식</a>
         <a href="#ui-screens">서비스 화면</a>
         <a href="#architecture">시스템 구조</a>
+        <a href="#technical-showcases">기술 쇼케이스</a>
         <a href="#metrics">검증 지표</a>
         <a href="#evaluation">평가 설계</a>
         <a href="#team">팀</a>
@@ -406,8 +407,110 @@
       </div>
     </section>
 
+    <!-- Technical Showcases Section -->
+    <section id="technical-showcases" class="section section-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Showcases</span>
+          <h2>실제 음성으로 확인하는 STT · TTS</h2>
+          <p class="section-desc">
+            말로에 적용한 음성 인식과 음성 합성 결과를 공개 쇼케이스에서 직접 듣고 비교할 수 있습니다. 정량 지표뿐 아니라 실제 주문 발화와 합성 음성을 함께 확인해보세요.
+          </p>
+        </div>
+
+        <div class="showcase-grid">
+          <!-- STT Showcase Card -->
+          <article class="showcase-card">
+            <div class="showcase-card-top">
+              <div class="showcase-card-header">
+                <span class="showcase-eyebrow">Speech Recognition</span>
+                <div class="showcase-icon-box" aria-hidden="true">
+                  <svg class="icon icon-md icon-green" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+                </div>
+              </div>
+              <h3 class="showcase-title">STT 최종 쇼케이스</h3>
+              <p class="showcase-desc">
+                직접 녹음한 카페 주문 음성과 Whisper QLoRA 기반 최종 STT 모델의 전사 결과를 비교합니다.
+              </p>
+              <ul class="showcase-feature-list" aria-label="STT 쇼케이스 주요 특징">
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>대표 발화 5건</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>실제 발화 vs STT 전사</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>오류 사례 포함</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>프로젝트 최종 도메인 평가 지표 확인 가능</span>
+                </li>
+              </ul>
+            </div>
+            <div class="showcase-card-bottom">
+              <a class="btn btn-showcase" href="https://nanocode00.github.io/stt_showcase/" target="_blank" rel="noopener noreferrer">
+                <span>STT 결과 직접 듣기 &#8599;</span>
+              </a>
+            </div>
+          </article>
+
+          <!-- TTS Showcase Card -->
+          <article class="showcase-card">
+            <div class="showcase-card-top">
+              <div class="showcase-card-header">
+                <span class="showcase-eyebrow">Speech Synthesis</span>
+                <div class="showcase-icon-box" aria-hidden="true">
+                  <svg class="icon icon-md icon-green" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+                </div>
+              </div>
+              <h3 class="showcase-title">TTS 최종 쇼케이스</h3>
+              <p class="showcase-desc">
+                MeloTTS Baseline과 Fine-tuned G_2800, 고령 사용자 맞춤 Adaptive Speed Level 0·1·2 음성을 직접 비교 청취합니다.
+              </p>
+              <ul class="showcase-feature-list" aria-label="TTS 쇼케이스 주요 특징">
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Baseline vs Fine-tuned</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>대표 문장 모델 비교</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>Adaptive Speed Level 0·1·2</span>
+                </li>
+                <li>
+                  <svg class="icon icon-sm icon-green" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
+                  <span>실제 합성 WAV 청취</span>
+                </li>
+              </ul>
+            </div>
+            <div class="showcase-card-bottom">
+              <a class="btn btn-showcase" href="https://nanocode00.github.io/tts_showcase/" target="_blank" rel="noopener noreferrer">
+                <span>TTS 결과 직접 듣기 &#8599;</span>
+              </a>
+              <div class="showcase-sublinks">
+                <a class="showcase-sublink" href="https://nanocode00.github.io/tts_showcase/model-comparison.html" target="_blank" rel="noopener noreferrer">
+                  <span>모델별 비교 &#8599;</span>
+                </a>
+                <span class="showcase-sublink-divider" aria-hidden="true">·</span>
+                <a class="showcase-sublink" href="https://nanocode00.github.io/tts_showcase/speed-levels.html" target="_blank" rel="noopener noreferrer">
+                  <span>Adaptive Speed 비교 &#8599;</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- Metrics Section -->
-    <section id="metrics" class="section section-alt">
+    <section id="metrics" class="section">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">Validation</span>
@@ -419,10 +522,15 @@
 
         <!-- STT Metrics -->
         <div class="metric-group">
-          <h3 class="metric-group-title">
-            <svg class="icon icon-sm icon-green" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
-            STT — whisper-medium QLoRA + Domain Fine-tuning
-          </h3>
+          <div class="metric-group-header">
+            <h3 class="metric-group-title">
+              <svg class="icon icon-sm icon-green" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+              STT — whisper-medium QLoRA + Domain Fine-tuning
+            </h3>
+            <a class="metric-context-link" href="https://nanocode00.github.io/stt_showcase/" target="_blank" rel="noopener noreferrer">
+              실제 STT 음성 및 전사 결과 보기 &#8599;
+            </a>
+          </div>
           <div class="metric-grid metric-grid-stt">
             <article class="metric-card">
               <p class="metric-value">89.13%</p>
@@ -444,10 +552,15 @@
 
         <!-- TTS Metrics -->
         <div class="metric-group">
-          <h3 class="metric-group-title">
-            <svg class="icon icon-sm icon-green" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
-            Adaptive TTS — MeloTTS 친절체
-          </h3>
+          <div class="metric-group-header">
+            <h3 class="metric-group-title">
+              <svg class="icon icon-sm icon-green" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+              Adaptive TTS — MeloTTS 친절체
+            </h3>
+            <a class="metric-context-link" href="https://nanocode00.github.io/tts_showcase/" target="_blank" rel="noopener noreferrer">
+              실제 TTS 합성 결과 비교하기 &#8599;
+            </a>
+          </div>
           <div class="metric-grid metric-grid-tts">
             <article class="metric-card">
               <p class="metric-value">+40.7ms</p>

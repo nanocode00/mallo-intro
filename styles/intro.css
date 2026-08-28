@@ -921,10 +921,211 @@ h2 {
 }
 
 /* ==========================================================================
+   Technical Showcases Section
+   ========================================================================== */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.8rem;
+}
+
+.showcase-card {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(203, 162, 88, 0.5);
+}
+
+.showcase-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.showcase-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.2rem;
+}
+
+.showcase-eyebrow {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold-hover);
+  background-color: var(--gold-light);
+  padding: 0.25rem 0.8rem;
+  border-radius: 999px;
+}
+
+.showcase-icon-box {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background-color: var(--green-light);
+  color: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.showcase-title {
+  color: var(--green-dark);
+  font-size: 1.45rem;
+  font-weight: 800;
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.showcase-desc {
+  color: var(--ink-muted);
+  font-size: 0.98rem;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+.showcase-feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.8rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.showcase-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.94rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.showcase-feature-list li .icon {
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.showcase-card-bottom {
+  margin-top: auto;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.btn-showcase {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-family: var(--font-stack);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  background-color: var(--green);
+  color: var(--white);
+  border: 1.5px solid var(--green);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(0, 117, 74, 0.25);
+  text-decoration: none;
+  width: 100%;
+}
+
+.btn-showcase:hover {
+  background-color: var(--green-hover);
+  border-color: var(--green-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 117, 74, 0.35);
+  color: var(--white);
+}
+
+.showcase-sublinks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+}
+
+.showcase-sublink {
+  color: var(--green);
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  transition: color 0.15s ease;
+}
+
+.showcase-sublink:hover {
+  color: var(--green-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.showcase-sublink-divider {
+  color: var(--line);
+  font-weight: bold;
+}
+
+/* ==========================================================================
    Metrics Section
    ========================================================================== */
 .metric-group {
   margin-bottom: 2.2rem;
+}
+
+.metric-group-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.9rem;
+}
+
+.metric-group-header .metric-group-title {
+  margin-bottom: 0;
+}
+
+.metric-context-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--green);
+  background-color: var(--green-light);
+  padding: 0.3rem 0.85rem;
+  border-radius: 999px;
+  border: 1px solid var(--green-soft);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.metric-context-link:hover {
+  background-color: var(--green-soft);
+  color: var(--green-dark);
+  border-color: var(--green);
+  transform: translateY(-1px);
 }
 
 .metric-group-title {
@@ -1587,6 +1788,51 @@ h2 {
   gap: 1rem;
 }
 
+.entry-secondary-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.4rem;
+}
+
+.entry-secondary-label {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--ink-muted);
+  letter-spacing: 0.02em;
+}
+
+.entry-secondary-links {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.entry-secondary-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1.05rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--green-dark);
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  text-decoration: none;
+}
+
+.entry-secondary-pill:hover {
+  border-color: var(--gold);
+  color: var(--green);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(20, 33, 29, 0.09);
+}
+
 /* ==========================================================================
    Responsive Breakpoints
    ========================================================================== */
@@ -1643,11 +1889,16 @@ h2 {
   .group-grid,
   .team-grid,
   .entry-grid,
+  .showcase-grid,
   .customer-page .stat-row,
   .customer-page .solution-grid,
   .customer-page .feature-grid,
   .arch-highlights-grid {
     grid-template-columns: 1fr;
+  }
+
+  .showcase-card {
+    padding: 1.6rem 1.4rem;
   }
 
   .screen-grid-3x2 {
