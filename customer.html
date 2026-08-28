@@ -6,17 +6,21 @@
   <title>말로(Mallo) — 어르신을 위한 쉬운 음성 카페 키오스크</title>
   <meta name="description" content="키오스크가 어려운 분들을 위한, 말로 주문하는 카페 키오스크. 그냥 말하면 됩니다." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="./styles/intro.css?v=20260828v3" />
+  <link rel="stylesheet" href="./styles/intro.css?v=20260828v4" />
 </head>
 <body class="customer-page">
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#hero">
+      <a class="brand" href="./" aria-label="말로 소개 홈으로 이동">
         <span class="brand-mark">mallo</span>
         <span class="brand-ko">말로</span>
       </a>
       <nav class="header-nav" aria-label="페이지 이동">
+        <a class="nav-home-link" href="./" aria-label="소개 홈으로 이동">
+          <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>소개 홈</span>
+        </a>
         <a href="#problem">어려움</a>
         <a href="#solution">말로의 해결</a>
         <a href="#how">이용 방법</a>
@@ -308,6 +312,11 @@
     <div class="container footer-inner">
       <p class="footer-brand">mallo — AI Human 7기 D조</p>
       <p class="footer-line">말로 주문하는 카페 키오스크 서비스</p>
+      <div class="footer-nav-links">
+        <a class="footer-home-link" href="./">
+          &larr; 말로 소개 홈으로 돌아가기
+        </a>
+      </div>
       <p class="footer-copy">&copy; 2026 Mallo Team D. All rights reserved.</p>
     </div>
   </footer>

@@ -6,17 +6,21 @@
   <title>말로(Mallo) — 말로 주문하는 카페 키오스크 (쇼케이스)</title>
   <meta name="description" content="시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자를 위한 Voice-first 대화형 카페 주문 시스템. AI Human 7기 D조 프로젝트." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
-  <link rel="stylesheet" href="./styles/intro.css?v=20260828v3" />
+  <link rel="stylesheet" href="./styles/intro.css?v=20260828v4" />
 </head>
 <body class="evaluator-page">
   <!-- Header -->
   <header class="intro-header">
     <div class="container header-inner">
-      <a class="brand" href="#hero">
+      <a class="brand" href="./" aria-label="말로 소개 홈으로 이동">
         <span class="brand-mark">mallo</span>
         <span class="brand-ko">말로</span>
       </a>
       <nav class="header-nav" aria-label="페이지 이동">
+        <a class="nav-home-link" href="./" aria-label="소개 홈으로 이동">
+          <svg class="icon icon-sm" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>소개 홈</span>
+        </a>
         <a href="#demo-video">시연 영상</a>
         <a href="#problem">문제 정의</a>
         <a href="#solution">해결 방식</a>
@@ -571,6 +575,11 @@
       <p class="footer-line footer-muted">
         본 프로젝트의 음성 합성 모델은 AI Hub 한국어 음성 데이터를 활용하여 학습되었습니다.
       </p>
+      <div class="footer-nav-links">
+        <a class="footer-home-link" href="./">
+          &larr; 말로 소개 홈으로 돌아가기
+        </a>
+      </div>
       <p class="footer-copy">&copy; 2026 Mallo Team D. All rights reserved.</p>
     </div>
   </footer>

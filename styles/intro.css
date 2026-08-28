@@ -1711,3 +1711,42 @@ h2 {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Navigation Home Links */
+.nav-home-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+  padding-right: 0.6rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-home-link:hover {
+  color: var(--white) !important;
+}
+
+.footer-nav-links {
+  margin: 0.6rem 0;
+}
+
+.footer-home-link {
+  display: inline-block;
+  color: var(--gold);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 0.35rem 0.95rem;
+  border: 1px solid rgba(203, 162, 88, 0.4);
+  border-radius: 999px;
+  background-color: rgba(203, 162, 88, 0.1);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-home-link:hover {
+  background-color: rgba(203, 162, 88, 0.25);
+  color: var(--white);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
