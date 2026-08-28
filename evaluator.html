@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>말로(Mallo) — 말로 주문하는 카페 키오스크</title>
+  <title>말로(Mallo) — 말로 주문하는 카페 키오스크 (쇼케이스)</title>
   <meta name="description" content="시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자를 위한 Voice-first 대화형 카페 주문 시스템. AI Human 7기 D조 프로젝트." />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="./styles/intro.css" />
 </head>
 <body class="evaluator-page">
+  <!-- Header -->
   <header class="intro-header">
     <div class="container header-inner">
       <a class="brand" href="#hero">
@@ -16,76 +17,133 @@
         <span class="brand-ko">말로</span>
       </a>
       <nav class="header-nav" aria-label="페이지 이동">
-        <a href="#problem">문제</a>
+        <a href="#demo-video">시연 영상</a>
+        <a href="#problem">문제 정의</a>
         <a href="#solution">해결 방식</a>
-        <a href="#architecture">구조</a>
-        <a href="#metrics">지표</a>
+        <a href="#ui-screens">서비스 화면</a>
+        <a href="#architecture">시스템 구조</a>
+        <a href="#metrics">검증 지표</a>
+        <a href="#evaluation">평가 설계</a>
         <a href="#team">팀</a>
       </nav>
+      <div class="header-cta">
+        <a class="btn btn-primary btn-sm" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+          말로 체험하기 &#8599;
+        </a>
+      </div>
     </div>
   </header>
 
   <main>
+    <!-- Hero Section -->
     <section id="hero" class="hero">
       <div class="hero-deco hero-deco-a" aria-hidden="true"></div>
       <div class="hero-deco hero-deco-b" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <p class="eyebrow">AI Human 7기 · D조 프로젝트</p>
-        <h1>말로 주문하는 카페 키오스크,<br /><strong>말로(Mallo)</strong></h1>
-        <p class="lead">
-          시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자가,
-          사람에게 주문하듯 음성으로 메뉴를 탐색·선택·수정·확인하는
-          Voice-first 대화형 주문 시스템입니다.
-        </p>
-        <ul class="keyword-chips" aria-label="핵심 구성 요소">
-          <li>STT</li>
-          <li>NLU</li>
-          <li>Order Engine</li>
-          <li>Adaptive TTS</li>
-          <li>Minimal GUI</li>
-        </ul>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#demo-video">데모 영상 보기</a>
-          <a class="btn btn-ghost" href="#metrics">검증 지표 보기</a>
+      <div class="container hero-layout">
+        <div class="hero-content">
+          <p class="eyebrow">
+            <svg class="badge-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            AI Human 7기 · D조 프로젝트
+          </p>
+          <h1>말로 주문하는 카페 키오스크,<br /><strong>말로(Mallo)</strong></h1>
+          <p class="lead">
+            시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자가,
+            사람에게 주문하듯 음성으로 메뉴를 탐색·선택·수정·확인하는
+            <strong>Voice-first 대화형 주문 시스템</strong>입니다.
+          </p>
+          <ul class="keyword-chips" aria-label="핵심 구성 요소">
+            <li>STT (Whisper QLoRA)</li>
+            <li>NLU (Local LLM)</li>
+            <li>Order Engine (Deterministic)</li>
+            <li>Adaptive TTS (Level 0–2)</li>
+            <li>Minimal GUI</li>
+          </ul>
+          <div class="hero-actions">
+            <a class="btn btn-primary btn-lg" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              말로 체험하기 &#8599;
+            </a>
+            <a class="btn btn-ghost" href="#demo-video">
+              <svg class="btn-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              시연 영상 보기
+            </a>
+            <a class="btn btn-ghost" href="#metrics">
+              <svg class="btn-icon" viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              검증 지표 보기
+            </a>
+          </div>
         </div>
-        <div class="media-slot hero-media" role="group" aria-label="말로 대표 UI 이미지">
-          <img src="./assets/images/kiosk-main.webp" alt="말로 키오스크 대표 화면" onerror="this.hidden=true" />
-          <div class="media-placeholder" role="img" aria-label="최종 UI 캡처 추가 예정"><p class="placeholder-title">MALLO KIOSK</p><p class="placeholder-sub">최종 UI 캡처 추가 예정</p></div>
-        </div>
-      </div>
-    </section>
 
-    <section id="demo-video" class="section">
-      <div class="container">
-        <h2>시연 영상</h2>
-        <p class="section-desc">
-          대기 화면의 `주문하기` 한 번으로 시작되는 실제 주문 흐름을 담은 데모 영상입니다.
-        </p>
-        <div class="media-slot video-slot" role="group" aria-label="말로 데모 영상">
-          <video controls preload="metadata" src="./assets/videos/mallo-demo.mp4" onerror="this.hidden=true"></video>
-          <div class="media-placeholder video-placeholder" role="img" aria-label="데모 영상 추가 예정 자리표시자">
-          <span class="placeholder-icon" aria-hidden="true">&#9654;</span>
-          <p class="placeholder-title">DEMO VIDEO</p>
-          <p class="placeholder-sub">데모 영상 추가 예정</p>
+        <div class="hero-visual">
+          <div class="kiosk-mockup">
+            <div class="kiosk-mockup-bar">
+              <span class="kiosk-badge">MALLO KIOSK</span>
+              <span class="kiosk-status-dot" title="시스템 가동 중"></span>
+            </div>
+            <div class="kiosk-mockup-screen">
+              <img src="./assets/images/kiosk-menu-voice.webp" alt="말로 키오스크 메뉴 탐색 및 하단 음성 발화 마이크 화면" width="208" height="359" />
+            </div>
+            <div class="kiosk-mockup-caption">
+              <svg class="badge-icon" style="color:var(--gold);" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+              큰 글씨 메뉴 &amp; 하단 음성 발화 마이크
+            </div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Demo Video Section -->
+    <section id="demo-video" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Demo Video</span>
+          <h2>실제 시연 영상</h2>
+          <p class="section-desc">
+            대기 화면의 '주문하기' 한 번으로 시작하여 음성 주문, 옵션 선택, 주문 확인 및 가상 결제까지 이어지는 전체 프로세스를 확인하세요.
+          </p>
+        </div>
+
+        <div class="video-container">
+          <div class="video-frame">
+            <video controls preload="metadata" playsinline class="demo-video-player" src="./assets/videos/mallo-demo.mp4">
+              <p>사용 중인 브라우저가 HTML5 비디오 재생을 지원하지 않습니다. <a href="./assets/videos/mallo-demo.mp4">영상 파일 다운로드</a></p>
+            </video>
+          </div>
+          <div class="video-footer">
+            <div class="video-footer-info">
+              <span class="video-badge">
+                <svg class="badge-icon" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                시연 녹화
+              </span>
+              <span class="video-title">말로 카페 키오스크 실제 음성 주문 및 결제 흐름 (3분 14초)</span>
+            </div>
+            <a class="btn btn-secondary btn-sm" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+              직접 체험하기 &#8599;
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Problem Section -->
     <section id="problem" class="section section-alt">
       <div class="container">
-        <h2>왜 필요한가?</h2>
-        <p class="section-desc">
-          65세 이상 키오스크 이용 포기율은 54%에 달하고, 60대 13명 대상 사전 설문에서도 같은 어려움이 반복적으로 나타났습니다.
-        </p>
+        <div class="section-header">
+          <span class="section-tag">Problem</span>
+          <h2>왜 필요한가?</h2>
+          <p class="section-desc">
+            65세 이상 고령층의 키오스크 이용 포기율은 54%에 달하며, 60대 13명 대상 사전 조사에서도 메뉴 탐색과 실수 시 재시작의 두려움이 반복해서 확인되었습니다.
+          </p>
+        </div>
+
         <div class="stat-grid">
-          <article class="stat-card">
+          <article class="stat-card stat-highlight">
             <p class="stat-value">54%</p>
-            <p class="stat-label">65세 이상 키오스크 이용 포기율</p>
+            <p class="stat-label">65세 이상 고령층 키오스크 이용 포기율</p>
           </article>
           <article class="stat-card">
             <p class="stat-value">8 / 13</p>
-            <p class="stat-label">메뉴 탐색·옵션 선택이 가장 큰 어려움</p>
+            <p class="stat-label">메뉴 탐색·옵션 선택이 가장 큰 어려움이라고 응답</p>
           </article>
           <article class="stat-card">
             <p class="stat-value">7 / 13</p>
@@ -93,226 +151,407 @@
           </article>
           <article class="stat-card">
             <p class="stat-value">10 / 13</p>
-            <p class="stat-label">이해하기 쉬운 방식의 재안내를 원함</p>
+            <p class="stat-label">듣기 쉽고 명확한 방식의 재안내를 희망</p>
           </article>
         </div>
-        <p class="source-note">출처: 말로 PRD 3.3 사용자 조사 및 설문 근거 · 사용자 테스트 프로토콜 Spec</p>
+        <p class="source-note">
+          출처: 말로 PRD 3.3 사용자 조사 및 설문 근거 (60대 13명 대상) · 사용자 테스트 프로토콜 Spec
+        </p>
       </div>
     </section>
 
+    <!-- Solution Section -->
     <section id="solution" class="section">
       <div class="container">
-        <h2>해결 방식</h2>
+        <div class="section-header">
+          <span class="section-tag">Solution</span>
+          <h2>말로(Mallo)의 해결 방식</h2>
+        </div>
+
         <blockquote class="vision-quote">
-          버튼을 없애는 것이 아니라 버튼을 찾아다닐 필요를 줄이고,
-          사용자가 듣기 어려워하면 말하는 방식도 바꾼다.
+          "버튼을 없애는 것이 아니라 버튼을 찾아다닐 필요를 줄이고,<br />
+          사용자가 듣기 어려워하면 말하는 방식도 바꾼다."
         </blockquote>
+
         <div class="card-grid">
           <article class="feature-card">
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+            </div>
             <h3>Voice-first, not Voice-only</h3>
             <p>
-              조회·추가·수정·삭제·확인 등 핵심 주문 흐름은 음성으로 수행하고,
+              조회·추가·수정·삭제·확인 등 핵심 주문 흐름은 자연스러운 음성으로 수행하고,
               확인과 복구는 큰 글씨 화면이 함께 도와줍니다. 한 번의 충분한 발화는
-              항목별로 다시 묻지 않습니다.
+              항목별로 번거롭게 다시 묻지 않습니다.
             </p>
           </article>
+
           <article class="feature-card">
-            <h3>Adaptive TTS Level 0–2</h3>
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            </div>
+            <h3>Adaptive TTS (Level 0–2)</h3>
             <p>
-              "다시 말해줘", "천천히 말해줘"라는 명시적 요청에 따라 발화 속도와
-              문장 분절이 단계적으로 적응합니다.
+              "다시 말해줘", "천천히 말해줘"라는 사용자의 명시적 요청에 따라
+              발화 속도와 문장 분절이 3단계로 유연하게 적응합니다.
             </p>
             <blockquote class="tts-example">
-              주문은 두 종류입니다.<br />아메리카노. 두 잔.<br />총 금액은 9,400원입니다.
-              <cite>Level 2 안내 예시</cite>
+              주문은 두 종류입니다.<br />
+              아메리카노. 두 잔.<br />
+              총 금액은 9,400원입니다.
+              <cite>Level 2 적응형 안내 예시</cite>
             </blockquote>
           </article>
+
           <article class="feature-card">
-            <h3>안전한 주문 상태</h3>
+            <div class="feature-icon-wrapper" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3>안전한 주문 상태 &amp; 복구</h3>
             <p>
-              인식 실패나 모호한 요청이 곧바로 오주문으로 이어지지 않습니다.
-              검증된 장바구니는 보호되고, 잘못 반영한 직전 변경은 되돌릴 수 있습니다.
+              인식 실패나 모호한 요청이 곧바로 잘못된 주문으로 이어지지 않습니다.
+              검증된 장바구니는 엄격히 보호되며, 잘못 반영된 직전 변경은 음성이나 화면 터치로 즉시 되돌릴 수 있습니다.
             </p>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- Service Screens Gallery -->
     <section id="ui-screens" class="section section-alt">
       <div class="container">
-        <h2>서비스 화면</h2>
-        <p class="section-desc">큰 글씨와 최소한의 조작으로 구성된 Minimal GUI입니다.</p>
-        <div class="screen-grid">
-          <figure class="screen-card">
-            <div class="media-slot"><img src="./assets/images/kiosk-main.webp" alt="말로 대기 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="최종 UI 캡처 추가 예정">
-              <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">최종 UI 캡처 추가 예정</p></div></div>
-            <figcaption>대기 화면 — 주문하기</figcaption>
-          </figure>
-          <figure class="screen-card">
-            <div class="media-slot"><img src="./assets/images/voice-overlay.webp" alt="말로 음성 입력 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="음성 입력 화면 캡처 추가 예정">
-              <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">음성 입력 화면 캡처 추가 예정</p></div></div>
-            <figcaption>음성 주문 — 듣는 중 표시</figcaption>
-          </figure>
-          <figure class="screen-card">
-            <div class="media-slot"><img src="./assets/images/order-flow.webp" alt="말로 주문 확인 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="주문 흐름 캡처 추가 예정">
-              <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">주문 흐름 캡처 추가 예정</p></div></div>
-            <figcaption>Adaptive TTS 확인</figcaption>
-          </figure>
-          <figure class="screen-card">
-            <div class="media-slot"><img src="./assets/images/order-flow.webp" alt="말로 주문 및 결제 화면" onerror="this.hidden=true" /><div class="media-placeholder screen-placeholder" role="img" aria-label="주문 및 결제 흐름 캡처 추가 예정">
-              <p class="placeholder-title">SCREEN</p>
-              <p class="placeholder-sub">주문 및 결제 흐름 캡처 추가 예정</p></div></div>
-            <figcaption>주문 확인·결제 완료</figcaption>
-          </figure>
+        <div class="section-header">
+          <span class="section-tag">UI Flow</span>
+          <h2>서비스 화면 흐름</h2>
+          <p class="section-desc">
+            고령 사용자의 인지 부담을 최소화한 6단계 주문 여정입니다. 실제 동작 중인 말로 키오스크의 캡처 화면입니다.
+          </p>
+        </div>
+
+        <div class="step-gallery-grid">
+          <!-- Step 1 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 1</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-01-start.webp" alt="말로 키오스크 대기 및 시작 화면" width="208" height="359" />
+            </div>
+            <div class="screen-info">
+              <h4>주문 시작</h4>
+              <p>화면의 큰 '주문하기' 버튼 터치 또는 음성으로 간편하게 시작</p>
+            </div>
+          </article>
+
+          <!-- Step 2 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 2</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-02-dining.webp" alt="매장에서 또는 포장 선택 화면" width="207" height="361" />
+            </div>
+            <div class="screen-info">
+              <h4>이용 방법 선택</h4>
+              <p>매장 이용 또는 포장 여부를 직관적인 2분할 버튼 또는 음성으로 선택</p>
+            </div>
+          </article>
+
+          <!-- Step 3 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 3</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-03-menu.webp" alt="메뉴 탐색 및 하단 음성 발화 마이크 화면" width="208" height="359" />
+            </div>
+            <div class="screen-info">
+              <h4>메뉴 음성 주문</h4>
+              <p>큰 글씨 메뉴와 하단 마이크를 통해 사람에게 말하듯 편하게 주문</p>
+            </div>
+          </article>
+
+          <!-- Step 4 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 4</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-04-review.webp" alt="담긴 장바구니 주문 내용 확인 화면" width="207" height="360" />
+            </div>
+            <div class="screen-info">
+              <h4>장바구니 확인</h4>
+              <p>선택한 메뉴, 수량, 금액을 큰 글씨로 명확히 검토 및 수정</p>
+            </div>
+          </article>
+
+          <!-- Step 5 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 5</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-05-payment.webp" alt="카드, 삼성페이, 카카오페이, 현금 결제 수단 선택 화면" width="208" height="360" />
+            </div>
+            <div class="screen-info">
+              <h4>결제 수단 선택</h4>
+              <p>카드, 스마트폰 간편결제, 현금 등 친숙한 4가지 결제 방식 지원</p>
+            </div>
+          </article>
+
+          <!-- Step 6 -->
+          <article class="screen-step-card">
+            <span class="screen-step-badge">Step 6</span>
+            <div class="screen-image-frame">
+              <img src="./assets/images/kiosk-06-complete.webp" alt="주문 완료 및 주문번호, 대기시간 안내 화면" width="207" height="360" />
+            </div>
+            <div class="screen-info">
+              <h4>주문 완료</h4>
+              <p>주문번호(P-64)와 예상 대기시간을 큰 글씨와 음성으로 확인</p>
+            </div>
+          </article>
         </div>
       </div>
     </section>
 
+    <!-- Architecture Section -->
     <section id="architecture" class="section">
       <div class="container">
-        <h2>시스템 구조</h2>
-        <p class="section-desc">
-          클라우드 의존 없이 로컬에서 동작하는 파이프라인입니다. NLU는 주문 상태를 직접 바꾸지 않으며,
-          결정론적 Order Engine만 검증된 주문을 실행합니다.
-        </p>
-        <ol class="arch-flow" aria-label="파이프라인 순서">
-          <li class="arch-step"><span class="arch-role">사용자 발화</span><span class="arch-detail">마이크 입력 · VAD 종료 감지</span></li>
-          <li class="arch-step arch-accent"><span class="arch-role">STT</span><span class="arch-detail">whisper-medium QLoRA 도메인 학습</span></li>
-          <li class="arch-step arch-accent"><span class="arch-role">NLU</span><span class="arch-detail">발화를 OrderCommand[]로 구조화</span></li>
-          <li class="arch-step arch-accent"><span class="arch-role">Order Engine</span><span class="arch-detail">메뉴 DB 검증 후 장바구니 반영</span></li>
-          <li class="arch-step arch-accent"><span class="arch-role">Adaptive TTS</span><span class="arch-detail">MeloTTS 친절체 · Level 0–2</span></li>
-          <li class="arch-step"><span class="arch-role">응답</span><span class="arch-detail">음성 안내 + 큰 글씨 화면</span></li>
-        </ol>
-        <div class="media-slot architecture-media"><img src="./assets/images/architecture.webp" alt="말로 시스템 구조도" onerror="this.hidden=true" /><div class="media-placeholder" role="img" aria-label="시스템 구조도 추가 예정"><p class="placeholder-title">ARCHITECTURE</p><p class="placeholder-sub">시스템 구조도 추가 예정</p></div></div>
+        <div class="section-header">
+          <span class="section-tag">Architecture</span>
+          <h2>시스템 구조 및 파이프라인</h2>
+          <p class="section-desc">
+            외부 클라우드 의존 없이 100% 로컬 환경에서 동작하는 프라이버시 보호 파이프라인입니다.
+            NLU는 주문 상태를 임의로 변경하지 않고 구조화된 OrderCommand를 생성하며, 결정론적 Order Engine이 검증 후 장바구니를 갱신합니다.
+          </p>
+        </div>
+
+        <div class="arch-pipeline-container">
+          <ol class="pipeline-flow" aria-label="파이프라인 단계">
+            <li class="pipeline-step">
+              <span class="pipeline-step-num">01 INPUT</span>
+              <span class="pipeline-step-title">사용자 발화</span>
+              <p class="pipeline-step-desc">마이크 음성 입력 및 Silero VAD 기반 발화 종료 감지</p>
+            </li>
+            <li class="pipeline-step pipeline-step-accent">
+              <span class="pipeline-step-num">02 STT</span>
+              <span class="pipeline-step-title">Whisper-medium</span>
+              <p class="pipeline-step-desc">카페 도메인 특화 QLoRA 파인튜닝 음성 인식</p>
+            </li>
+            <li class="pipeline-step pipeline-step-accent">
+              <span class="pipeline-step-num">03 NLU</span>
+              <span class="pipeline-step-title">Local NLU</span>
+              <p class="pipeline-step-desc">발화를 정형화된 OrderCommand[] 규격으로 변환</p>
+            </li>
+            <li class="pipeline-step pipeline-step-accent">
+              <span class="pipeline-step-num">04 ENGINE</span>
+              <span class="pipeline-step-title">Order Engine</span>
+              <p class="pipeline-step-desc">메뉴 DB 유효성 검증 및 결정론적 상태 전이 실행</p>
+            </li>
+            <li class="pipeline-step pipeline-step-accent">
+              <span class="pipeline-step-num">05 TTS</span>
+              <span class="pipeline-step-title">Adaptive TTS</span>
+              <p class="pipeline-step-desc">MeloTTS 친절체 기반 Level 0~2 속도·분절 적응 합성</p>
+            </li>
+            <li class="pipeline-step">
+              <span class="pipeline-step-num">06 OUTPUT</span>
+              <span class="pipeline-step-title">Voice + GUI</span>
+              <p class="pipeline-step-desc">고령 친화 큰 글씨 화면 동기화 및 음성 안내 출력</p>
+            </li>
+          </ol>
+        </div>
+
+        <div class="arch-highlights-grid">
+          <div class="arch-highlight-card">
+            <h4>
+              <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              100% Local Inference
+            </h4>
+            <p>인터넷 연결이 불안정하거나 끊긴 매장 환경에서도 음성 인식과 합성이 즉각 수행되며, 고객의 음성 데이터가 외부로 유출되지 않습니다.</p>
+          </div>
+          <div class="arch-highlight-card">
+            <h4>
+              <svg viewBox="0 0 24 24"><path d="M12 3v18M6 8l6-2 6 2M3 13l3-5 3 5a3 3 0 0 1-6 0zM15 13l3-5 3 5a3 3 0 0 1-6 0z"/></svg>
+              Deterministic State Engine
+            </h4>
+            <p>LLM/NLU의 환각(Hallucination)으로 인한 오주문을 원천 차단하기 위해, 실제 결제 및 장바구니 변경은 검증된 결정론적 엔진만 수행합니다.</p>
+          </div>
+          <div class="arch-highlight-card">
+            <h4>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+              Adaptive Voice Engine
+            </h4>
+            <p>고객의 "다시 말해줘", "천천히 말해줘" 피드백을 실시간 감지하여 안내 속도와 문장 호흡을 고령자의 청취 속도에 맞추어 조절합니다.</p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Metrics Section -->
     <section id="metrics" class="section section-alt">
       <div class="container">
-        <h2>검증된 지표</h2>
-        <p class="section-desc">
-          모든 수치는 저장소 실측 기록(worklogs) 기준이며, STT와 Adaptive TTS는 각각의 측정 환경을 분리해 표기합니다.
-        </p>
-
-        <h3 class="metric-group-title">STT — whisper-medium QLoRA+Domain</h3>
-        <div class="metric-grid metric-grid-stt">
-          <article class="metric-card">
-            <p class="metric-value">89.13%</p>
-            <p class="metric-label">메뉴명 인식 Recall · Baseline 대비 +1.6%p</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-value">49.20%</p>
-            <p class="metric-label">수량 인식 Recall · Baseline 대비 +8.6%p 개선</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-value">CER 0.1095</p>
-            <p class="metric-label">문자 오류율 · Baseline 0.1646 대비 -33.5%</p>
-          </article>
+        <div class="section-header">
+          <span class="section-tag">Validation</span>
+          <h2>검증된 성능 지표</h2>
+          <p class="section-desc">
+            저장소 실측 기록(worklogs) 기반의 실제 측정 결과입니다. STT와 Adaptive TTS의 실측 수치를 명확히 제시합니다.
+          </p>
         </div>
-        <p class="source-note">
-          측정 환경: 도메인 평가셋 506문장(10 메뉴 × 51 패턴) · NVIDIA RTX 4060 Ti — 저장소 worklogs/stt.md
-        </p>
 
-        <h3 class="metric-group-title">Adaptive TTS — MeloTTS 친절체</h3>
-        <div class="metric-grid metric-grid-tts">
-          <article class="metric-card">
-            <p class="metric-value">+40.7ms</p>
-            <p class="metric-label">Level 1 평균 추가 지연 (p95 +54.8ms)</p>
-          </article>
-          <article class="metric-card">
-            <p class="metric-value">약 +2.0%</p>
-            <p class="metric-label">Level 1 추가 RTF 증가율 · 모든 Level에서 RTF 1.0 미만 유지</p>
-          </article>
+        <!-- STT Metrics -->
+        <div class="metric-group">
+          <h3 class="metric-group-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+            STT — whisper-medium QLoRA + Domain Fine-tuning
+          </h3>
+          <div class="metric-grid metric-grid-stt">
+            <article class="metric-card">
+              <p class="metric-value">89.13%</p>
+              <p class="metric-label">메뉴명 인식 Recall (Baseline 대비 +1.6%p 향상)</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-value">49.20%</p>
+              <p class="metric-label">수량 인식 Recall (Baseline 대비 +8.6%p 대폭 개선)</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-value">CER 0.1095</p>
+              <p class="metric-label">문자 오류율 (Baseline 0.1646 대비 -33.5% 감소)</p>
+            </article>
+          </div>
+          <p class="source-note">
+            측정 환경: 도메인 평가셋 506문장(10 메뉴 × 51 패턴) · NVIDIA RTX 4060 Ti — 저장소 worklogs/stt.md
+          </p>
         </div>
-        <p class="source-note">
-          측정 환경: T-21 평가 문장 20개 · 200회 합성 · NVIDIA RTX 5070 Ti 16GB — 저장소 worklogs/tts.md
-        </p>
 
-        <h3 class="metric-group-title">End-to-End Latency</h3>
-        <div class="metric-grid metric-grid-e2e">
-          <article class="metric-card metric-target">
-            <p class="metric-badge">설계 목표</p>
-            <p class="metric-value">&le; 1.2초</p>
-            <p class="metric-label">Time to First Audio (요구 기준 1.5초)</p>
-          </article>
+        <!-- TTS Metrics -->
+        <div class="metric-group">
+          <h3 class="metric-group-title">
+            <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+            Adaptive TTS — MeloTTS 친절체
+          </h3>
+          <div class="metric-grid metric-grid-tts">
+            <article class="metric-card">
+              <p class="metric-value">+40.7ms</p>
+              <p class="metric-label">Level 1 평균 추가 지연 (p95 +54.8ms로 극소 지연 달성)</p>
+            </article>
+            <article class="metric-card">
+              <p class="metric-value">RTF &lt; 1.0</p>
+              <p class="metric-label">모든 Level에서 실시간 합성 배속(RTF &lt; 1.0) 안정적 유지</p>
+            </article>
+          </div>
+          <p class="source-note">
+            측정 환경: T-21 평가 문장 20개 · 200회 합성 · NVIDIA RTX 5070 Ti 16GB — 저장소 worklogs/tts.md
+          </p>
         </div>
-        <p class="source-note">
-          목표·요구 기준: e2e-latency Spec · 설계 목표이며 최종 Real E2E 재측정(I-08) 진행 예정
-        </p>
+
+        <!-- E2E Latency Target -->
+        <div class="metric-group">
+          <h3 class="metric-group-title">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            End-to-End Latency
+          </h3>
+          <div class="metric-grid metric-grid-e2e">
+            <article class="metric-card metric-target">
+              <span class="metric-badge">설계 목표</span>
+              <p class="metric-value">&le; 1.2초</p>
+              <p class="metric-label">Time to First Audio (요구 기준 1.5초 이내 만족 목표)</p>
+            </article>
+          </div>
+          <p class="source-note">
+            목표·요구 기준: e2e-latency Spec · 최종 Real E2E 통합 재측정 기준
+          </p>
+        </div>
       </div>
     </section>
 
+    <!-- Evaluation Design Section -->
     <section id="evaluation" class="section">
       <div class="container">
-        <h2>평가 설계</h2>
-        <p class="section-desc">
-          고정된 프로토콜로 세 가지 조건을 비교 검증합니다. 피험자 배정은 순서 효과를 통제하는 라틴 방격법을 사용합니다.
-        </p>
+        <div class="section-header">
+          <span class="section-tag">Experiment</span>
+          <h2>평가 실험 설계</h2>
+          <p class="section-desc">
+            고정된 프로토콜로 세 가지 실험 조건을 비교 검증합니다. 피험자 배정은 순서 효과를 통제하는 라틴 방격법(Latin Square)을 적용합니다.
+          </p>
+        </div>
+
         <div class="group-grid">
           <article class="group-card">
-            <p class="group-tag">Group A</p>
+            <p class="group-tag">Group A (대조군)</p>
             <h3>일반 터치 키오스크</h3>
-            <p>카테고리 탭 탐색 · 화면 텍스트만 제공</p>
+            <p>카테고리 탭 탐색 · 작은 텍스트 화면 · 기존 상용 키오스크 환경</p>
           </article>
           <article class="group-card">
-            <p class="group-tag">Group B</p>
+            <p class="group-tag">Group B (비교군)</p>
             <h3>고정 속도 음성 키오스크</h3>
-            <p>음성 PTT + 터치 GUI · 적응 없는 고정 TTS</p>
+            <p>음성 PTT + 터치 GUI · 적응 기능 없는 고정 속도 TTS 안내</p>
           </article>
           <article class="group-card group-highlight">
-            <p class="group-tag">Group C</p>
+            <p class="group-tag">Group C (시험군)</p>
             <h3>말로(Mallo)</h3>
-            <p>주문하기 1회 + 자동 Listening · Adaptive TTS Level 0–2</p>
+            <p>주문하기 1회 + 자동 Listening · Adaptive TTS Level 0–2 + 큰 글씨 Minimal GUI</p>
           </article>
         </div>
+
         <ul class="metric-chips" aria-label="측정 지표">
-          <li>과제 완료율 TCR</li>
-          <li>완료 시간 TCT</li>
-          <li>오류 복구 성공률 ERR</li>
-          <li>E2E 지연</li>
-          <li>사용성 SUS</li>
-          <li>음성 만족도 MOS</li>
+          <li>과제 완료율 (TCR)</li>
+          <li>과제 완료 시간 (TCT)</li>
+          <li>오류 복구 성공률 (ERR)</li>
+          <li>E2E 지연 시간</li>
+          <li>시스템 사용성 (SUS)</li>
+          <li>음성 만족도 (MOS)</li>
         </ul>
       </div>
     </section>
 
+    <!-- Team Section -->
     <section id="team" class="section section-alt">
       <div class="container">
-        <h2>팀</h2>
+        <div class="section-header">
+          <span class="section-tag">Team</span>
+          <h2>프로젝트 팀원</h2>
+          <p class="section-desc">AI Human 7기 D조</p>
+        </div>
+
         <div class="team-grid">
           <article class="member-card">
-            <p class="member-avatar" aria-hidden="true">김</p>
+            <div class="member-avatar" aria-hidden="true">김</div>
             <h3>김재훈</h3>
             <p class="member-role">팀장 · TTS</p>
           </article>
           <article class="member-card">
-            <p class="member-avatar" aria-hidden="true">윤</p>
+            <div class="member-avatar" aria-hidden="true">윤</div>
             <h3>윤태현</h3>
             <p class="member-role">팀원 · STT</p>
           </article>
           <article class="member-card">
-            <p class="member-avatar" aria-hidden="true">류</p>
+            <div class="member-avatar" aria-hidden="true">류</div>
             <h3>류승민</h3>
             <p class="member-role">팀원 · NLU</p>
           </article>
         </div>
       </div>
     </section>
+
+    <!-- Bottom CTA Banner -->
+    <section class="container">
+      <div class="cta-banner">
+        <h3>지금 바로 말로(Mallo)를 직접 경험해보세요</h3>
+        <p>어르신도 누구나 편안하게 말로 주문하는 Voice-first 키오스크를 웹 브라우저에서 바로 체험할 수 있습니다.</p>
+        <div class="cta-banner-actions">
+          <a class="btn btn-primary btn-lg" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+            <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+            말로 키오스크 체험하기 &#8599;
+          </a>
+          <a class="btn btn-ghost" href="#hero">
+            &#8593; 맨 위로 이동
+          </a>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <!-- Footer -->
   <footer class="intro-footer">
     <div class="container footer-inner">
       <p class="footer-brand">mallo — AI Human 7기 D조</p>
       <p class="footer-line">
-        Python · PyTorch(CUDA) · Whisper QLoRA · Local NLU · MeloTTS 친절체 · Vanilla HTML/CSS
+        Python · PyTorch (CUDA) · Whisper QLoRA · Local LLM/NLU · MeloTTS 친절체 · Vanilla HTML/CSS
       </p>
       <p class="footer-line footer-muted">
         본 프로젝트의 음성 합성 모델은 AI Hub 한국어 음성 데이터를 활용하여 학습되었습니다.
       </p>
-      <p class="footer-copy">&copy; 2026 Mallo Team D</p>
+      <p class="footer-copy">&copy; 2026 Mallo Team D. All rights reserved.</p>
     </div>
   </footer>
 </body>

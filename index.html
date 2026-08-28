@@ -3,18 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>말로(Mallo) 소개</title>
-  <meta name="description" content="말로(Mallo) 음성 우선 카페 키오스크 소개 페이지" />
+  <title>말로(Mallo) — 말로 주문하는 카페 키오스크</title>
+  <meta name="description" content="시각·터치 중심 키오스크에 부담을 느끼는 고령 사용자를 위한 Voice-first 대화형 주문 시스템. AI Human 7기 D조 프로젝트." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
   <link rel="stylesheet" href="./styles/intro.css" />
 </head>
 <body class="intro-index">
   <main class="intro-entry container">
-    <p class="eyebrow">AI Human 7기 · D조 프로젝트</p>
+    <div class="entry-brand-badge">
+      <svg class="badge-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+      AI Human 7기 · D조 프로젝트
+    </div>
     <h1>말로(Mallo)</h1>
-    <p class="lead">말로 주문하는 카페 키오스크</p>
+    <p class="lead-main">말로 주문하는 카페 키오스크</p>
+    <p class="desc-text">
+      시각·터치 중심 키오스크가 낯설고 어려운 어르신도,<br />
+      사람에게 대화하듯 편안하게 음성으로 주문하는 <strong>Voice-first 키오스크</strong>입니다.
+    </p>
+
     <div class="entry-grid">
-      <a class="entry-card" href="./customer.html"><h2>고객 안내</h2><p>키오스크가 어려운 고객을 위한 쉬운 사용 방법과 핵심 기능을 소개합니다.</p></a>
-      <a class="entry-card" href="./evaluator.html"><h2>평가자·쇼케이스</h2><p>문제, 시스템 구조, 검증 지표와 평가 설계를 확인합니다.</p></a>
+      <a class="entry-card" href="./customer.html">
+        <div>
+          <div class="entry-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+          <h2>고객 안내</h2>
+          <p>
+            키오스크가 어려운 어르신과 일반 고객을 위한 쉬운 사용 가이드와 주요 배려 기능을 소개합니다.
+          </p>
+        </div>
+        <span class="entry-card-arrow">사용 방법 알아보기 &rarr;</span>
+      </a>
+
+      <a class="entry-card" href="./evaluator.html">
+        <div>
+          <div class="entry-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h2>평가자 · 쇼케이스</h2>
+          <p>
+            시스템 아키텍처(STT/NLU/TTS), 실측 성능 지표, 사용자 평가 실험 설계와 데모 영상을 확인합니다.
+          </p>
+        </div>
+        <span class="entry-card-arrow">기술 쇼케이스 보기 &rarr;</span>
+      </a>
+    </div>
+
+    <div class="entry-direct-cta">
+      <a class="btn btn-primary btn-lg" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+        말로 키오스크 바로 체험하기 &#8599;
+      </a>
     </div>
   </main>
 </body>
