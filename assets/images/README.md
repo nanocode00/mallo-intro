@@ -1,8 +1,10 @@
-# 이미지 추가 안내
+# 이미지 자산 안내
 
-아래 파일명을 그대로 추가하면 `evaluator.html`에서 자동으로 표시됩니다. 파일이 없으면 페이지는 깨진 이미지 대신 안내 placeholder를 표시합니다.
+말로(Mallo) 키오스크의 실제 UI 스크린샷 자산입니다.
 
-- `kiosk-main.webp` — Hero 및 대기 화면
-- `voice-overlay.webp` — 음성 입력 화면
-- `order-flow.webp` — 주문 확인 및 결제 흐름
-- `architecture.webp` — 시스템 구조도
+- `welcome.webp` — 1. 대기/시작 화면 (어서오세요, 주문하기)
+- `service-mode.webp` — 2. 이용 방식 선택 (매장에서 / 포장)
+- `menu-order.webp` — 3. 메뉴 탐색 및 음성 주문 (Hero 대표 UI)
+- `order-review.webp` — 4. 장바구니 주문 확인
+- `payment.webp` — 5. 결제 수단 선택
+- `complete.webp` — 6. 주문 완료 (주문번호, 대기시간)

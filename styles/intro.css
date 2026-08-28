@@ -20,12 +20,12 @@
   --white: #ffffff;
   --radius-xl: 24px;
   --radius-lg: 18px;
-  --radius-md: 12px;
+  --radius-md: 14px;
   --radius-sm: 8px;
   --shadow-sm: 0 2px 8px rgba(20, 33, 29, 0.05);
   --shadow-card: 0 10px 30px rgba(20, 33, 29, 0.07);
-  --shadow-hover: 0 18px 40px rgba(20, 33, 29, 0.12);
-  --shadow-device: 0 20px 48px rgba(16, 38, 31, 0.18);
+  --shadow-hover: 0 18px 40px rgba(20, 33, 29, 0.13);
+  --shadow-device: 0 20px 48px rgba(16, 38, 31, 0.2);
   --font-stack: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", "Malgun Gothic", sans-serif;
 }
 
@@ -73,7 +73,7 @@ a {
 
 /* Layout */
 .container {
-  width: min(1120px, 92%);
+  width: min(1140px, 92%);
   margin: 0 auto;
 }
 
@@ -394,28 +394,63 @@ h2 {
   align-items: center;
 }
 
-/* Hero Kiosk Preview */
+/* Hero Layered Device Composition (CSS-only) */
 .hero-visual {
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  min-height: 480px;
 }
 
-.kiosk-mockup {
+.hero-device-composition {
   position: relative;
   width: 100%;
-  max-width: 330px;
+  max-width: 340px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-device-secondary {
+  position: absolute;
+  top: 25px;
+  left: -45px;
+  width: 260px;
+  background: #0d1a16;
+  border: 6px solid #233e36;
+  border-radius: 24px;
+  box-shadow: 0 16px 36px rgba(10, 26, 21, 0.4);
+  opacity: 0.65;
+  transform: rotate(-6deg) scale(0.92);
+  transform-origin: center;
+  transition: all 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-device-secondary img {
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  object-fit: contain;
+}
+
+.hero-device-main {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
   background: #0d1a16;
   border: 8px solid #28443d;
   border-radius: 28px;
   box-shadow: var(--shadow-device), 0 0 0 1px rgba(255, 255, 255, 0.1);
   overflow: hidden;
+  z-index: 2;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.kiosk-mockup:hover {
+.hero-device-main:hover {
   transform: translateY(-4px);
-  box-shadow: 0 28px 60px rgba(10, 26, 21, 0.3), 0 0 0 1px rgba(203, 162, 88, 0.3);
+  box-shadow: 0 28px 60px rgba(10, 26, 21, 0.35), 0 0 0 1px rgba(203, 162, 88, 0.35);
 }
 
 .kiosk-mockup-bar {
@@ -447,18 +482,20 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0.4rem;
 }
 
 .kiosk-mockup-screen img {
   width: 100%;
   height: auto;
   display: block;
-  image-rendering: auto;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .kiosk-mockup-caption {
   background: #142823;
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.9);
   font-size: 0.82rem;
   padding: 0.75rem 1rem;
   text-align: center;
@@ -687,78 +724,83 @@ h2 {
 }
 
 /* ==========================================================================
-   Step Gallery (Service Screens)
+   Service Screens (3x2 Flow Grid with Vertical Kiosk Devices)
    ========================================================================== */
-.step-gallery-grid {
+.screen-grid-3x2 {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.6rem;
 }
 
-.screen-step-card {
+.screen-device-card {
   background-color: var(--white);
   border-radius: var(--radius-lg);
-  padding: 0.9rem;
+  padding: 1.2rem 1.2rem 1.4rem;
   box-shadow: var(--shadow-card);
+  border: 1px solid var(--line);
   display: flex;
   flex-direction: column;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  border: 1px solid var(--line);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.screen-step-card:hover {
-  transform: translateY(-4px);
+.screen-device-card:hover {
+  transform: translateY(-5px);
   box-shadow: var(--shadow-hover);
   border-color: var(--green-soft);
 }
 
+.screen-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.9rem;
+}
+
 .screen-step-badge {
-  display: inline-block;
-  align-self: flex-start;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 800;
-  padding: 0.2rem 0.55rem;
+  padding: 0.22rem 0.65rem;
   border-radius: 999px;
   background-color: var(--green-soft);
   color: var(--green-dark);
-  margin-bottom: 0.6rem;
 }
 
-.screen-image-frame {
+.screen-step-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green-dark);
+}
+
+.kiosk-screen-frame {
   width: 100%;
-  aspect-ratio: 9 / 15.5;
-  background-color: #fdfcf9;
-  border-radius: var(--radius-md);
+  background-color: #0f1e1a;
+  border: 4px solid #233e36;
+  border-radius: 16px;
   overflow: hidden;
-  border: 1px solid #eae4d8;
+  box-shadow: 0 8px 20px rgba(16, 38, 31, 0.12);
+  margin-bottom: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.8rem;
 }
 
-.screen-image-frame img {
+.kiosk-screen-frame img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 420px;
   object-fit: contain;
   display: block;
 }
 
-.screen-info {
+.screen-desc-box {
   margin-top: auto;
+  padding-top: 0.4rem;
 }
 
-.screen-info h4 {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--green-dark);
-  margin-bottom: 0.25rem;
-}
-
-.screen-info p {
-  font-size: 0.8rem;
+.screen-desc-box p {
+  font-size: 0.92rem;
   color: var(--ink-muted);
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 /* ==========================================================================
@@ -1269,7 +1311,7 @@ h2 {
   line-height: 1.6;
 }
 
-/* Customer 4-Step Flow with Real Screenshots */
+/* Customer 4-Step Flow with Vertical Screenshots */
 .customer-step-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -1323,11 +1365,10 @@ h2 {
 
 .customer-step-image {
   width: 100%;
-  aspect-ratio: 9 / 15.5;
-  background-color: var(--cream);
-  border-radius: var(--radius-md);
+  background-color: #0f1e1a;
+  border: 4px solid #233e36;
+  border-radius: 14px;
   overflow: hidden;
-  border: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1336,7 +1377,8 @@ h2 {
 
 .customer-step-image img {
   width: 100%;
-  height: 100%;
+  height: auto;
+  max-height: 380px;
   object-fit: contain;
 }
 
@@ -1345,6 +1387,42 @@ h2 {
   color: var(--ink);
   line-height: 1.55;
   font-weight: 500;
+}
+
+/* Customer Complete Showcase Box */
+.customer-complete-box {
+  background-color: var(--white);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-card);
+  margin-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+.customer-complete-visual {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-complete-visual .kiosk-screen-frame {
+  max-width: 260px;
+}
+
+.customer-complete-info h3 {
+  font-size: 1.5rem;
+  color: var(--green-dark);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+}
+
+.customer-complete-info p {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  line-height: 1.65;
+  margin-bottom: 1.4rem;
 }
 
 .customer-page .feature-grid {
@@ -1539,8 +1617,8 @@ h2 {
     justify-content: center;
   }
 
-  .step-gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
+  .screen-grid-3x2 {
+    grid-template-columns: repeat(2, 1fr);
   }
 
   .pipeline-flow {
@@ -1549,6 +1627,11 @@ h2 {
 
   .customer-step-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .customer-complete-box {
+    grid-template-columns: 1fr;
+    text-align: center;
   }
 }
 
@@ -1575,8 +1658,12 @@ h2 {
     grid-template-columns: 1fr;
   }
 
-  .step-gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
+  .screen-grid-3x2 {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-device-secondary {
+    display: none;
   }
 
   .pipeline-flow {
@@ -1602,7 +1689,6 @@ h2 {
     padding: 4rem 0 5rem;
   }
 
-  .step-gallery-grid,
   .customer-step-grid {
     grid-template-columns: 1fr;
   }

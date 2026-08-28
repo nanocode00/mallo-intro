@@ -75,17 +75,25 @@
         </div>
 
         <div class="hero-visual">
-          <div class="kiosk-mockup">
-            <div class="kiosk-mockup-bar">
-              <span class="kiosk-badge">MALLO KIOSK</span>
-              <span class="kiosk-status-dot" title="시스템 가동 중"></span>
+          <div class="hero-device-composition">
+            <!-- Secondary Device (Background Layer) -->
+            <div class="hero-device-secondary" aria-hidden="true">
+              <img src="./assets/images/order-review.webp" alt="주문 확인 화면 레이어" width="207" height="360" />
             </div>
-            <div class="kiosk-mockup-screen">
-              <img src="./assets/images/kiosk-menu-voice.webp" alt="말로 키오스크 메뉴 탐색 및 하단 음성 발화 마이크 화면" width="208" height="359" />
-            </div>
-            <div class="kiosk-mockup-caption">
-              <svg class="badge-icon" style="color:var(--gold);" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
-              큰 글씨 메뉴 &amp; 하단 음성 발화 마이크
+
+            <!-- Main Device (Foreground Core UI) -->
+            <div class="hero-device-main">
+              <div class="kiosk-mockup-bar">
+                <span class="kiosk-badge">MALLO KIOSK</span>
+                <span class="kiosk-status-dot" title="시스템 가동 중"></span>
+              </div>
+              <div class="kiosk-mockup-screen">
+                <img src="./assets/images/menu-order.webp" alt="말로 키오스크 핵심 메뉴 탐색 및 하단 음성 발화 마이크 화면" width="208" height="359" />
+              </div>
+              <div class="kiosk-mockup-caption">
+                <svg class="badge-icon" style="color:var(--gold);" viewBox="0 0 24 24"><path d="M12 2a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3z"/><path d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v4M8 22h8"/></svg>
+                메뉴 탐색 · 장바구니 · 하단 음성 UI
+              </div>
             </div>
           </div>
         </div>
@@ -217,87 +225,99 @@
       </div>
     </section>
 
-    <!-- Service Screens Gallery -->
+    <!-- Service Screens Flow (3x2 Grid) -->
     <section id="ui-screens" class="section section-alt">
       <div class="container">
         <div class="section-header">
           <span class="section-tag">UI Flow</span>
           <h2>서비스 화면 흐름</h2>
           <p class="section-desc">
-            고령 사용자의 인지 부담을 최소화한 6단계 주문 여정입니다. 실제 동작 중인 말로 키오스크의 캡처 화면입니다.
+            고령 사용자의 인지 부담을 최소화한 6단계 주문 여정입니다. 실제 동작 중인 세로형 키오스크 화면의 캡처입니다.
           </p>
         </div>
 
-        <div class="step-gallery-grid">
-          <!-- Step 1 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 1</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-01-start.webp" alt="말로 키오스크 대기 및 시작 화면" width="208" height="359" />
+        <div class="screen-grid-3x2">
+          <!-- Step 1: 주문 시작 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">1단계</span>
+              <h3 class="screen-step-title">주문 시작</h3>
             </div>
-            <div class="screen-info">
-              <h4>주문 시작</h4>
-              <p>화면의 큰 '주문하기' 버튼 터치 또는 음성으로 간편하게 시작</p>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/welcome.webp" alt="말로 키오스크 최초 대기 및 시작 화면 (어서오세요, 주문하기)" width="208" height="359" />
             </div>
-          </article>
-
-          <!-- Step 2 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 2</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-02-dining.webp" alt="매장에서 또는 포장 선택 화면" width="207" height="361" />
-            </div>
-            <div class="screen-info">
-              <h4>이용 방법 선택</h4>
-              <p>매장 이용 또는 포장 여부를 직관적인 2분할 버튼 또는 음성으로 선택</p>
+            <div class="screen-desc-box">
+              <p>화면 중앙의 큰 '주문하기' 버튼 터치 또는 음성으로 간편하게 시작합니다.</p>
             </div>
           </article>
 
-          <!-- Step 3 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 3</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-03-menu.webp" alt="메뉴 탐색 및 하단 음성 발화 마이크 화면" width="208" height="359" />
+          <!-- Step 2: 매장·포장 선택 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">2단계</span>
+              <h3 class="screen-step-title">매장·포장 선택</h3>
             </div>
-            <div class="screen-info">
-              <h4>메뉴 음성 주문</h4>
-              <p>큰 글씨 메뉴와 하단 마이크를 통해 사람에게 말하듯 편하게 주문</p>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/service-mode.webp" alt="매장에서 또는 포장 선택 화면 (어떻게 이용하시겠어요?)" width="207" height="361" />
             </div>
-          </article>
-
-          <!-- Step 4 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 4</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-04-review.webp" alt="담긴 장바구니 주문 내용 확인 화면" width="207" height="360" />
-            </div>
-            <div class="screen-info">
-              <h4>장바구니 확인</h4>
-              <p>선택한 메뉴, 수량, 금액을 큰 글씨로 명확히 검토 및 수정</p>
+            <div class="screen-desc-box">
+              <p>음성 또는 직관적인 큰 2분할 버튼으로 이용 방식을 빠르게 선택합니다.</p>
             </div>
           </article>
 
-          <!-- Step 5 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 5</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-05-payment.webp" alt="카드, 삼성페이, 카카오페이, 현금 결제 수단 선택 화면" width="208" height="360" />
+          <!-- Step 3: 메뉴 주문 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">3단계</span>
+              <h3 class="screen-step-title">메뉴 주문</h3>
             </div>
-            <div class="screen-info">
-              <h4>결제 수단 선택</h4>
-              <p>카드, 스마트폰 간편결제, 현금 등 친숙한 4가지 결제 방식 지원</p>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/menu-order.webp" alt="메뉴 탐색 및 하단 음성 발화 마이크 화면 (무엇을 더 주문하시겠어요?)" width="208" height="359" />
+            </div>
+            <div class="screen-desc-box">
+              <p>메뉴를 보고 터치하거나 하단 마이크를 통해 사람에게 말하듯 편하게 주문합니다.</p>
             </div>
           </article>
 
-          <!-- Step 6 -->
-          <article class="screen-step-card">
-            <span class="screen-step-badge">Step 6</span>
-            <div class="screen-image-frame">
-              <img src="./assets/images/kiosk-06-complete.webp" alt="주문 완료 및 주문번호, 대기시간 안내 화면" width="207" height="360" />
+          <!-- Step 4: 주문 확인 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">4단계</span>
+              <h3 class="screen-step-title">주문 확인</h3>
             </div>
-            <div class="screen-info">
-              <h4>주문 완료</h4>
-              <p>주문번호(P-64)와 예상 대기시간을 큰 글씨와 음성으로 확인</p>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/order-review.webp" alt="담긴 장바구니 주문 내용 확인 화면 (주문 내용, 결제할게요, 수정할게요)" width="207" height="360" />
+            </div>
+            <div class="screen-desc-box">
+              <p>담은 메뉴와 총 금액을 큰 글씨로 확인하고 음성이나 터치로 수정할 수 있습니다.</p>
+            </div>
+          </article>
+
+          <!-- Step 5: 결제 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">5단계</span>
+              <h3 class="screen-step-title">결제</h3>
+            </div>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/payment.webp" alt="카드, 삼성페이, 카카오페이, 현금 결제 수단 선택 화면" width="208" height="360" />
+            </div>
+            <div class="screen-desc-box">
+              <p>카드, 모바일 간편결제, 현금 등 친숙한 4가지 결제 수단 중 선택합니다.</p>
+            </div>
+          </article>
+
+          <!-- Step 6: 주문 완료 -->
+          <article class="screen-device-card">
+            <div class="screen-card-header">
+              <span class="screen-step-badge">6단계</span>
+              <h3 class="screen-step-title">주문 완료</h3>
+            </div>
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/complete.webp" alt="주문 완료 화면 (주문이 완료되었습니다! 주문번호 P-64, 예상 대기시간 5분)" width="207" height="360" />
+            </div>
+            <div class="screen-desc-box">
+              <p>주문번호와 예상 대기시간을 큰 글씨와 음성 안내로 명확하게 확인합니다.</p>
             </div>
           </article>
         </div>

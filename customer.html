@@ -149,60 +149,79 @@
       </div>
     </section>
 
-    <!-- 실제 서비스 화면 안내 -->
+    <!-- 실제 서비스 화면 안내 (4단계 + 완료 화면) -->
     <section id="screens" class="section section-alt">
       <div class="container">
         <h2>실제 이런 화면이 나옵니다</h2>
-        <p class="section-lead">실제 말로 키오스크의 화면을 미리 확인해보세요</p>
+        <p class="section-lead">실제 말로 키오스크의 화면을 순서대로 확인해보세요</p>
         
         <div class="customer-step-grid">
-          <!-- Step 1 -->
+          <!-- Step 1: 매장 또는 포장 선택 -->
           <article class="customer-step-card">
             <div class="customer-step-header">
               <span class="customer-step-badge">1</span>
-              <h3>시작하기</h3>
+              <h3>매장 / 포장 선택</h3>
             </div>
             <div class="customer-step-image">
-              <img src="./assets/images/kiosk-01-start.webp" alt="말로 키오스크 첫 화면" width="208" height="359" />
+              <img src="./assets/images/service-mode.webp" alt="매장에서 또는 포장 선택 화면 (어떻게 이용하시겠어요?)" width="207" height="361" />
             </div>
-            <p>첫 화면에서 초록색 <strong>'주문하기'</strong> 버튼을 누르면 바로 주문이 시작됩니다.</p>
+            <p>'매장에서' 드실지 '포장'하실지 큰 버튼을 누르거나 말로 선택합니다.</p>
           </article>
 
-          <!-- Step 2 -->
+          <!-- Step 2: 원하는 메뉴 말하기 -->
           <article class="customer-step-card">
             <div class="customer-step-header">
               <span class="customer-step-badge">2</span>
               <h3>원하는 메뉴 말하기</h3>
             </div>
             <div class="customer-step-image">
-              <img src="./assets/images/kiosk-03-menu.webp" alt="메뉴 선택 및 음성 발화 화면" width="208" height="359" />
+              <img src="./assets/images/menu-order.webp" alt="메뉴 탐색 및 음성 주문 화면 (무엇을 더 주문하시겠어요?)" width="208" height="359" />
             </div>
-            <p>화면 하단의 마이크를 누르거나, 원하시는 메뉴를 자연스럽게 말씀하세요.</p>
+            <p>메뉴를 보며 누르거나, 화면 하단 마이크에 원하는 메뉴를 편하게 말씀하세요.</p>
           </article>
 
-          <!-- Step 3 -->
+          <!-- Step 3: 주문 내용 확인 -->
           <article class="customer-step-card">
             <div class="customer-step-header">
               <span class="customer-step-badge">3</span>
-              <h3>주문 내용 확인하기</h3>
+              <h3>주문 내용 확인</h3>
             </div>
             <div class="customer-step-image">
-              <img src="./assets/images/kiosk-04-review.webp" alt="장바구니 주문 확인 화면" width="207" height="360" />
+              <img src="./assets/images/order-review.webp" alt="담긴 장바구니 주문 확인 화면 (주문 내용, 4,700원)" width="207" height="360" />
             </div>
-            <p>담긴 메뉴와 수량, 금액을 큰 글씨로 확인하시고 '결제할게요'를 누릅니다.</p>
+            <p>담긴 메뉴와 금액을 큰 글씨로 꼼꼼히 확인하고 '결제할게요'를 누릅니다.</p>
           </article>
 
-          <!-- Step 4 -->
+          <!-- Step 4: 결제 수단 선택 -->
           <article class="customer-step-card">
             <div class="customer-step-header">
               <span class="customer-step-badge">4</span>
-              <h3>결제 수단 선택하기</h3>
+              <h3>결제 수단 선택</h3>
             </div>
             <div class="customer-step-image">
-              <img src="./assets/images/kiosk-05-payment.webp" alt="결제 방법 선택 화면" width="208" height="360" />
+              <img src="./assets/images/payment.webp" alt="결제 방법 선택 화면 (카드, 삼성페이, 카카오페이, 현금)" width="208" height="360" />
             </div>
-            <p>카드, 모바일페이, 현금 중 원하시는 결제 방법을 선택하시면 주문이 완료됩니다.</p>
+            <p>카드, 스마트폰 간편결제, 현금 중 편하신 결제 방법을 누르면 주문이 완료됩니다.</p>
           </article>
+        </div>
+
+        <!-- 주문 완료 화면 상세 박스 -->
+        <div class="customer-complete-box">
+          <div class="customer-complete-visual">
+            <div class="kiosk-screen-frame">
+              <img src="./assets/images/complete.webp" alt="주문 완료 화면 (주문번호 P-64, 예상 대기시간 5분)" width="207" height="360" />
+            </div>
+          </div>
+          <div class="customer-complete-info">
+            <h3>&#9989; 주문이 끝나면 번호표가 나옵니다</h3>
+            <p>
+              결제가 완료되면 화면에 <strong>주문번호(예: P-64)</strong>와 <strong>예상 대기시간</strong>이 큰 글씨와 친절한 음성으로 안내됩니다. 영수증 출력도 간편하게 누르실 수 있습니다.
+            </p>
+            <a class="btn btn-secondary" href="https://mallo-kiosk.vercel.app/" target="_blank" rel="noopener noreferrer">
+              <svg class="btn-icon" viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              말로 직접 체험해보기 &#8599;
+            </a>
+          </div>
         </div>
       </div>
     </section>
